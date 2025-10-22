@@ -1,0 +1,36 @@
+graph TD
+    Start([👤 User Asks Question<br/>'What is the weather in Tokyo?']) -->|"① User input"| StateInit[📦 State Initialized<br/>messages: list]
+    
+    StateInit -->|"② Graph starts"| Agent[🤖 AGENT NODE<br/>call_agent function]
+    
+    Agent -->|"③ Invoke model"| GPT[💭 GPT-4 Thinks<br/>Should I use a tool<br/>or answer directly?]
+    
+    GPT -->|"④ Model responds"| Decision{🔀 Conditional Edge<br/>tools_condition}
+    
+    Decision -->|"⑤ Tool call detected<br/>weather_tool('Tokyo')"| ToolNode[🛠️ TOOLS NODE<br/>Execute Tool]
+    
+    Decision -->|"⑪ No tool needed<br/>(Final answer ready)"| End([✅ END<br/>Return Response])
+    
+    ToolNode -->|"⑥ Execute"| ToolExec[⚙️ Tool Execution<br/>weather_tool runs<br/>Returns: 'Clear, 72°F']
+    
+    ToolExec -->|"⑦ Tool result"| ToolResult[📄 Result Added to State<br/>ToolMessage with result]
+    
+    ToolResult -->|"⑧ Back to agent"| Agent2[🤖 AGENT NODE<br/>Process tool result]
+    
+    Agent2 -->|"⑨ Invoke model<br/>with tool result"| GPT2[💭 GPT-4 Formats Response<br/>'The weather in Tokyo<br/>is clear and 72°F']
+    
+    GPT2 -->|"⑩ Model responds"| Decision2{🔀 Conditional Edge<br/>Need more tools?}
+    
+    Decision2 -->|"If more tools needed"| ToolNode
+    Decision2 -->|"⑪ Final answer"| End
+    
+    style Start fill:#e1f5ff
+    style End fill:#c8e6c9
+    style Agent fill:#fff3e0
+    style Agent2 fill:#fff3e0
+    style ToolNode fill:#f3e5f5
+    style Decision fill:#ffe0b2
+    style Decision2 fill:#ffe0b2
+    style StateInit fill:#e8eaf6
+    style GPT fill:#fce4ec
+    style GPT2 fill:#fce4ec
