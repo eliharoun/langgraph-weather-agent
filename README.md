@@ -54,7 +54,7 @@ python run_agent.py
 
 ## 📚 Complete Tutorial
 
-### 🎯 [Step-by-Step Guide →](langgraph-tutorial.md)
+### 🎯 [Step-by-Step Guide →](step-by-step-tutorial.md)
 
 Follow the comprehensive tutorial that covers:
 - **LangGraph Fundamentals** - Understanding nodes, edges, and state
@@ -74,7 +74,7 @@ Learn production-ready AI agent development from the ground up with clear explan
 ## 🔗 Resources
 
 **Learning:**
-- **[Complete Tutorial](langgraph-tutorial.md)** - Full implementation guide
+- **[Complete Tutorial](step-by-step-tutorial.md)** - Full implementation guide
 - **[LangGraph Docs](https://langchain-ai.github.io/langgraph/)** - Official documentation
 - **[LangChain Academy](https://academy.langchain.com/)** - Free courses
 
@@ -86,4 +86,4 @@ Learn production-ready AI agent development from the ground up with clear explan
 
 **Ready to build intelligent AI agents the right way?**
 
-🚀 **[Start Learning →](langgraph-tutorial.md)**
+🚀 **[Start Learning →](step-by-step-tutorial.md)**
